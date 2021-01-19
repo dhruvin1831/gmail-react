@@ -34,51 +34,54 @@ function EmailList() {
   }, []);
   return (
     <div className="emailList">
-      <div className="emailList__settings">
-        <div className="emailList__settingsLeft">
-          <Checkbox />
-          <IconButton>
-            <ArrowDropDown />
-          </IconButton>
-          <IconButton>
-            <Redo />
-          </IconButton>
-          <IconButton>
-            <MoreVert />
-          </IconButton>
+      <div className="emailList__settingsBody">
+        <div className="emailList__settings">
+          <div className="emailList__settingsLeft">
+            <Checkbox />
+            <IconButton>
+              <ArrowDropDown />
+            </IconButton>
+            <IconButton>
+              <Redo />
+            </IconButton>
+            <IconButton>
+              <MoreVert />
+            </IconButton>
+          </div>
+          <div className="emailList__settingsRight">
+            <IconButton>
+              <ChevronLeft />
+            </IconButton>
+            <IconButton>
+              <ChevronRight />
+            </IconButton>
+            <IconButton>
+              <KeyboardHide />
+            </IconButton>
+            <IconButton>
+              <Settings />
+            </IconButton>
+          </div>
         </div>
-        <div className="emailList__settingsRight">
-          <IconButton>
-            <ChevronLeft />
-          </IconButton>
-          <IconButton>
-            <ChevronRight />
-          </IconButton>
-          <IconButton>
-            <KeyboardHide />
-          </IconButton>
-          <IconButton>
-            <Settings />
-          </IconButton>
+
+        <div className="emailList__sections">
+          <Section Icon={InboxIcon} title="Primary" color="red" selected />
+          <Section Icon={People} title="Social" color="#1A73EB" />
+          <Section Icon={LocalOffer} title="Promotions" color="green" />
         </div>
       </div>
-      <div className="emailList__sections">
-        <Section Icon={InboxIcon} title="Primary" color="red" selected />
-        <Section Icon={People} title="Social" color="#1A73EB" />
-        <Section Icon={LocalOffer} title="Promotions" color="green" />
-      </div>
-      <div className="emailList__list">
-        {emails?.map(({ id, data: { to, subject, message, timestamp } }) => (
-          <EmailRow
-            id={id}
-            key={id}
-            title={to}
-            subject={subject}
-            description={message}
-            time={new Date(timestamp?.seconds * 1000).toUTCString()}
-          />
-        ))}
-      </div>
+      {/* <div className="emailList__list"> */}
+      {emails?.map(({ id, data: { to, subject, message, timestamp } }) => (
+        <EmailRow
+          id={id}
+          key={id}
+          title={to}
+          subject={subject}
+          description={message}
+          time={new Date(timestamp?.seconds * 1000).toUTCString()}
+        />
+      ))}
+      {/* </div> */}
     </div>
   );
 }

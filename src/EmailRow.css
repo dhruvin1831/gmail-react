@@ -4,7 +4,7 @@
   cursor: pointer;
   border-bottom: 1px solid whitesmoke;
   height: 50px;
-  z-index: 999;
+  z-index: -1;
 }
 
 .emailRow:hover {
