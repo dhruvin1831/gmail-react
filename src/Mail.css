@@ -1,6 +1,17 @@
 .mail {
   flex: 1;
   background-color: whitesmoke;
+  overflow: auto;
+}
+
+.mail::-webkit-scrollbar {
+  display: none;
+}
+
+.mail__toolsBody {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .mail__tools {

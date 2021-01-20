@@ -44,11 +44,16 @@
   flex-direction: column;
 }
 
-.sendMail > form > input {
+.sendMail > form > input,
+textarea {
   padding: 10px;
   border: none;
   border-bottom: 1px solid whitesmoke;
   outline: none;
+}
+
+.sendMail > form > textarea {
+  resize: none;
 }
 
 .sendMail__message {

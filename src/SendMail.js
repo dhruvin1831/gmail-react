@@ -32,7 +32,7 @@ function SendMail() {
         />
       </div>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form autocomplete="off" onSubmit={handleSubmit(onSubmit)}>
         <input
           name="to"
           placeholder="To"
@@ -50,7 +50,7 @@ function SendMail() {
         {errors.subject && (
           <p className="sendMail__error">Subject is required!</p>
         )}
-        <input
+        <textarea
           name="message"
           className="sendMail__message"
           placeholder="Message..."
